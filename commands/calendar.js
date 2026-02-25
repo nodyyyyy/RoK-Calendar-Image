@@ -15,14 +15,11 @@ module.exports = {
     const year = now.getFullYear();
     const month = now.getMonth();
 
-    const auth = new google.auth.JWT(
-      process.env.GOOGLE_CLIENT_EMAIL,
-      null,
-      process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-      ['https://www.googleapis.com/auth/calendar.readonly']
-    );
-
-    const calendar = google.calendar({ version: 'v3', auth });
+    // Create calendar instance using API key (PUBLIC CALENDAR)
+    const calendar = google.calendar({
+      version: 'v3',
+      auth: process.env.GOOGLE_API_KEY
+    });
 
     const response = await calendar.events.list({
       calendarId: process.env.GOOGLE_CALENDAR_ID,
