@@ -1,0 +1,15 @@
+{
+  "name": "kingdom-calendar-bot",
+  "version": "1.0.0",
+  "description": "Monthly Kingdom Calendar Bot",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.45",
+    "discord.js": "^14.14.1",
+    "googleapis": "^131.0.0"
+  }
+}
